@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3B9BF56-8214-48BD-B98E-FBE637BDF37F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>testtodos</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\build\$(Configuration)\</OutDir>
+    <IntDir>..\..\build\temp\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\build\$(Configuration)\</OutDir>
+    <IntDir>..\..\build\temp\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../;../../contrib/sqlite/source/;../../contrib/googletest/;../../contrib/googletest/include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../;../../contrib/sqlite/source/;../../contrib/googletest/;../../contrib/googletest/include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\contrib\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\..\contrib\sqlite\source\sqlite3.c" />
+    <ClCompile Include="..\..\model\entity\category\Category.cpp" />
+    <ClCompile Include="..\..\model\entity\commentary\Commentary.cpp" />
+    <ClCompile Include="..\..\model\entity\IEntity.cpp" />
+    <ClCompile Include="..\..\model\entity\task\Task.cpp" />
+    <ClCompile Include="..\..\model\entity\user\User.cpp" />
+    <ClCompile Include="..\..\model\factory\category\CategoryFactory.cpp" />
+    <ClCompile Include="..\..\model\factory\commentary\CommentaryFactory.cpp" />
+    <ClCompile Include="..\..\model\factory\task\TaskFactory.cpp" />
+    <ClCompile Include="..\..\model\factory\user\UserFactory.cpp" />
+    <ClCompile Include="..\..\model\repository\BaseRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\category\CategoryRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\commentary\CommentaryRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\task\TaskFilterSettings.cpp" />
+    <ClCompile Include="..\..\model\repository\task\TaskRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\task\TaskSortSettings.cpp" />
+    <ClCompile Include="..\..\model\repository\user\UserRepository.cpp" />
+    <ClCompile Include="..\..\model\schema\Schema.cpp" />
+    <ClCompile Include="..\..\model\traits\category\CategoryTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\commentary\CommentaryTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\IEntityTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\task\TaskTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\user\UserTraits.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelEntityCategory.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelEntityCommentary.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelEntityTask.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelEntityUser.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelRepositoryCategoryRepository.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelRepositoryCommentaryRepository.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelRepositoryTaskRepository.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelRepositoryUserRepository.cpp" />
+    <ClCompile Include="..\..\test\unit\TestModelSchemaSchema.cpp" />
+    <ClCompile Include="..\..\utility\DateTime.cpp" />
+    <ClCompile Include="..\..\utility\StringConversions.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\model\entity\category\Category.h" />
+    <ClInclude Include="..\..\model\entity\commentary\Commentary.h" />
+    <ClInclude Include="..\..\model\entity\IEntity.h" />
+    <ClInclude Include="..\..\model\entity\task\Task.h" />
+    <ClInclude Include="..\..\model\entity\user\User.h" />
+    <ClInclude Include="..\..\model\factory\category\CategoryFactory.h" />
+    <ClInclude Include="..\..\model\factory\commentary\CommentaryFactory.h" />
+    <ClInclude Include="..\..\model\factory\task\TaskFactory.h" />
+    <ClInclude Include="..\..\model\factory\user\UserFactory.h" />
+    <ClInclude Include="..\..\model\repository\BaseRepository.h" />
+    <ClInclude Include="..\..\model\repository\category\CategoryRepository.h" />
+    <ClInclude Include="..\..\model\repository\commentary\CommentaryRepository.h" />
+    <ClInclude Include="..\..\model\repository\IRepository.h" />
+    <ClInclude Include="..\..\model\repository\IRepositoryImpl.h" />
+    <ClInclude Include="..\..\model\repository\task\TaskFilterSettings.h" />
+    <ClInclude Include="..\..\model\repository\task\TaskRepository.h" />
+    <ClInclude Include="..\..\model\repository\task\TaskSortSettings.h" />
+    <ClInclude Include="..\..\model\repository\user\UserRepository.h" />
+    <ClInclude Include="..\..\model\schema\Schema.h" />
+    <ClInclude Include="..\..\model\traits\category\CategoryTraits.h" />
+    <ClInclude Include="..\..\model\traits\commentary\CommentaryTraits.h" />
+    <ClInclude Include="..\..\model\traits\IEntityTraits.h" />
+    <ClInclude Include="..\..\model\traits\task\TaskTraits.h" />
+    <ClInclude Include="..\..\model\traits\user\UserTraits.h" />
+    <ClInclude Include="..\..\utility\DateTime.h" />
+    <ClInclude Include="..\..\utility\StringConversions.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
