@@ -1,5 +1,5 @@
-#ifndef UTILITY_STRING_CONVERSIONS_H
-#define UTILITY_STRING_CONVERSIONS_H
+#ifndef TODOS_UTILITY_STRINGCONVERSIONS_H
+#define TODOS_UTILITY_STRINGCONVERSIONS_H
 
 #include <string>
 
@@ -8,4 +8,4 @@ namespace todos_utility {
   int StringToInt(const std::string& str);
 }
 
-#endif //UTILITY_STRING_CONVERSIONS_H
+#endif //TODOS_UTILITY_STRINGCONVERSIONS_H

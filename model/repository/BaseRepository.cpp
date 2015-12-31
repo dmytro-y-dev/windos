@@ -151,8 +151,3 @@ void BaseRepository::SetSchema(const BaseRepository::Schema &schema)
 {
   m_db = schema;
 }
-
-
-//while (sqlite3_step(stmt) == SQLITE_ROW) {
-//}
-
