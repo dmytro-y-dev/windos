@@ -71,16 +71,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\build\$(Configuration)\</OutDir>
-    <IntDir>..\..\build\temp\$(Configuration)\</IntDir>
+    <OutDir>..\..\build\$(ProjectName)\$(Platform)_$(Configuration)\</OutDir>
+    <IntDir>..\..\build\$(ProjectName)\temp\$(Platform)_$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\build\$(Configuration)\</OutDir>
-    <IntDir>..\..\build\temp\$(Configuration)\</IntDir>
+    <OutDir>..\..\build\$(ProjectName)\$(Platform)_$(Configuration)\</OutDir>
+    <IntDir>..\..\build\$(ProjectName)\temp\$(Platform)_$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
