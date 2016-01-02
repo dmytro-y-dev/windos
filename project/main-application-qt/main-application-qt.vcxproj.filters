@@ -31,7 +31,7 @@
     <ClCompile Include="MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\build\main-application\GeneratedFiles\qrc_MainWindow.cpp">
+    <ClCompile Include="..\..\build\main-application-qt\GeneratedFiles\qrc_MainWindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\build\main-application\GeneratedFiles\ui_MainWindow.h">
+    <ClInclude Include="..\..\build\main-application-qt\GeneratedFiles\ui_MainWindow.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
