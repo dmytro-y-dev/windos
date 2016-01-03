@@ -92,7 +92,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WXMSW__;WXUSINGDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\contrib\wxWidgets\lib\vc_dll\mswud;..\..\contrib\wxWidgets\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\contrib\sqlite\source;..\..\;..\..\contrib\wxWidgets\lib\vc_dll\mswud;..\..\contrib\wxWidgets\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -123,7 +123,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__WXMSW__;WXUSINGDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\contrib\wxWidgets\lib\vc_dll\mswu;..\..\contrib\wxWidgets\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\contrib\sqlite\source;..\..\;..\..\contrib\wxWidgets\lib\vc_dll\mswu;..\..\contrib\wxWidgets\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -154,6 +154,32 @@
   <ItemGroup>
     <ClInclude Include="..\..\gui\wxwidgets\Application.h" />
     <ClInclude Include="..\..\gui\wxwidgets\MainWindow.h" />
+    <ClInclude Include="..\..\model\entity\category\Category.h" />
+    <ClInclude Include="..\..\model\entity\commentary\Commentary.h" />
+    <ClInclude Include="..\..\model\entity\IEntity.h" />
+    <ClInclude Include="..\..\model\entity\task\Task.h" />
+    <ClInclude Include="..\..\model\entity\user\User.h" />
+    <ClInclude Include="..\..\model\factory\category\CategoryFactory.h" />
+    <ClInclude Include="..\..\model\factory\commentary\CommentaryFactory.h" />
+    <ClInclude Include="..\..\model\factory\task\TaskFactory.h" />
+    <ClInclude Include="..\..\model\factory\user\UserFactory.h" />
+    <ClInclude Include="..\..\model\repository\BaseRepository.h" />
+    <ClInclude Include="..\..\model\repository\category\CategoryRepository.h" />
+    <ClInclude Include="..\..\model\repository\commentary\CommentaryRepository.h" />
+    <ClInclude Include="..\..\model\repository\IRepository.h" />
+    <ClInclude Include="..\..\model\repository\IRepositoryImpl.h" />
+    <ClInclude Include="..\..\model\repository\task\TaskFilterSettings.h" />
+    <ClInclude Include="..\..\model\repository\task\TaskRepository.h" />
+    <ClInclude Include="..\..\model\repository\task\TaskSortSettings.h" />
+    <ClInclude Include="..\..\model\repository\user\UserRepository.h" />
+    <ClInclude Include="..\..\model\schema\Schema.h" />
+    <ClInclude Include="..\..\model\traits\category\CategoryTraits.h" />
+    <ClInclude Include="..\..\model\traits\commentary\CommentaryTraits.h" />
+    <ClInclude Include="..\..\model\traits\IEntityTraits.h" />
+    <ClInclude Include="..\..\model\traits\task\TaskTraits.h" />
+    <ClInclude Include="..\..\model\traits\user\UserTraits.h" />
+    <ClInclude Include="..\..\utility\DateTime.h" />
+    <ClInclude Include="..\..\utility\StringConversions.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,8 +192,33 @@
     <Image Include="windos.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\contrib\sqlite\source\sqlite3.c" />
     <ClCompile Include="..\..\gui\wxwidgets\Application.cpp" />
     <ClCompile Include="..\..\gui\wxwidgets\MainWindow.cpp" />
+    <ClCompile Include="..\..\model\entity\category\Category.cpp" />
+    <ClCompile Include="..\..\model\entity\commentary\Commentary.cpp" />
+    <ClCompile Include="..\..\model\entity\IEntity.cpp" />
+    <ClCompile Include="..\..\model\entity\task\Task.cpp" />
+    <ClCompile Include="..\..\model\entity\user\User.cpp" />
+    <ClCompile Include="..\..\model\factory\category\CategoryFactory.cpp" />
+    <ClCompile Include="..\..\model\factory\commentary\CommentaryFactory.cpp" />
+    <ClCompile Include="..\..\model\factory\task\TaskFactory.cpp" />
+    <ClCompile Include="..\..\model\factory\user\UserFactory.cpp" />
+    <ClCompile Include="..\..\model\repository\BaseRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\category\CategoryRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\commentary\CommentaryRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\task\TaskFilterSettings.cpp" />
+    <ClCompile Include="..\..\model\repository\task\TaskRepository.cpp" />
+    <ClCompile Include="..\..\model\repository\task\TaskSortSettings.cpp" />
+    <ClCompile Include="..\..\model\repository\user\UserRepository.cpp" />
+    <ClCompile Include="..\..\model\schema\Schema.cpp" />
+    <ClCompile Include="..\..\model\traits\category\CategoryTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\commentary\CommentaryTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\IEntityTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\task\TaskTraits.cpp" />
+    <ClCompile Include="..\..\model\traits\user\UserTraits.cpp" />
+    <ClCompile Include="..\..\utility\DateTime.cpp" />
+    <ClCompile Include="..\..\utility\StringConversions.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

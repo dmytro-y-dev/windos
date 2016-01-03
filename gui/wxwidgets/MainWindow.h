@@ -23,6 +23,13 @@ namespace windos_gui {
     static const wxSize MIN_WINDOW_SIZE;
 
   private:
+    wxChoice* m_choiceCategory;
+    wxChoice* m_choiceSortBy;
+    wxChoice* m_choiceOrderBy;
+    wxTextCtrl* m_searchBoxTask;
+    wxListBox* m_listTasks;
+
+  private:
     wxDECLARE_EVENT_TABLE();
 
     void MenuDatabaseNew(wxCommandEvent &event);
