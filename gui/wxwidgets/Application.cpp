@@ -1,9 +1,10 @@
 #include <wx/stdpaths.h>
 
+#include <gui/wxwidgets/screens/MainWindow.h>
 #include "Application.h"
-#include "MainWindow.h"
 
 using windos_gui::Application;
+using windos_gui_screens::MainWindow;
 
 wxIMPLEMENT_APP(Application);
 

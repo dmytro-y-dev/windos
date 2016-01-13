@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -19,17 +11,17 @@
     <Filter Include="Core Source Code Dependencies">
       <UniqueIdentifier>{db56f06b-5e10-4152-ba9a-32b3cf38a704}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{54b7ec12-4c97-45b5-8fdf-2cbbded00b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\Screens">
+      <UniqueIdentifier>{4e9a33b5-8f41-4602-a216-ca8c9192dc08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\Components">
+      <UniqueIdentifier>{4a00cfca-e02d-4e74-ab44-1d271f5760c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\wxwidgets\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\wxwidgets\MainWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\model\entity\category\Category.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
@@ -108,6 +100,22 @@
     <ClInclude Include="..\..\utility\StringConversions.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\gui\wxwidgets\Application.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\gui\wxwidgets\screens\MainWindow.h">
+      <Filter>GUI\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\wxwidgets\screens\CategoriesManagerWindow.h">
+      <Filter>GUI\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\wxwidgets\components\TextLinkButton.h">
+      <Filter>GUI\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\wxwidgets\screens\TaskEditorWindow.h">
+      <Filter>GUI\Screens</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="main-application-wxwidgets.rc">
@@ -120,12 +128,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\gui\wxwidgets\MainWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\wxwidgets\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\model\entity\category\Category.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
@@ -200,6 +202,21 @@
     </ClCompile>
     <ClCompile Include="..\..\contrib\sqlite\source\sqlite3.c">
       <Filter>Core Source Code Dependencies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\wxwidgets\Application.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\wxwidgets\screens\CategoriesManagerWindow.cpp">
+      <Filter>GUI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\wxwidgets\screens\MainWindow.cpp">
+      <Filter>GUI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\wxwidgets\components\TextLinkButton.cpp">
+      <Filter>GUI\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\wxwidgets\screens\TaskEditorWindow.cpp">
+      <Filter>GUI\Screens</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

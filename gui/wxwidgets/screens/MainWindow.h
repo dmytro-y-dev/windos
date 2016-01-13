@@ -1,5 +1,5 @@
-#ifndef WINDOS_GUI_MAINWINDOW_H
-#define WINDOS_GUI_MAINWINDOW_H
+#ifndef WINDOS_GUI_SCREENS_MAINWINDOW_H
+#define WINDOS_GUI_SCREENS_MAINWINDOW_H
 
 #include <wx/wxprec.h>
 
@@ -7,7 +7,7 @@
 #include <wx/wx.h>
 #endif
 
-namespace windos_gui {
+namespace windos_gui_screens {
   class MainWindow: public wxFrame
   {
   public:
@@ -23,11 +23,19 @@ namespace windos_gui {
     static const wxSize MIN_WINDOW_SIZE;
 
   private:
+    wxMenuItem* m_menuitemShowCompletedTasks;
+    wxMenuItem* m_menuitemSortByTitle;
+    wxMenuItem* m_menuitemSortByFinishDate;
+    wxMenuItem* m_menuitemSortByPublicationDate;
+    wxMenuItem* m_menuitemSortOrderAscending;
+    wxMenuItem* m_menuitemSortOrderDescending;
+
     wxChoice* m_choiceCategory;
     wxChoice* m_choiceSortBy;
     wxChoice* m_choiceOrderBy;
     wxTextCtrl* m_searchBoxTask;
     wxListBox* m_listTasks;
+    wxCheckBox* m_checkboxShowCompletedTasks;
 
   private:
     wxDECLARE_EVENT_TABLE();
@@ -51,6 +59,11 @@ namespace windos_gui {
     void MenuHelpURLLatestReleases(wxCommandEvent &event);
     void MenuHelpAbout(wxCommandEvent &event);
 
+    void ButtonManageCategories(wxCommandEvent &event);
+    void ButtonCreateTask(wxCommandEvent &event);
+
+    void UpdateCategoriesList();
+
     void InitializeWidgets();
     void InitializeIcon();
     void InitializeMenubar();
@@ -59,4 +72,4 @@ namespace windos_gui {
 }
 
 
-#endif //WINDOS_GUI_MAINWINDOW_H
+#endif //WINDOS_GUI_SCREENS_MAINWINDOW_H
