@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -18,6 +10,9 @@
     </Filter>
     <Filter Include="Contrib">
       <UniqueIdentifier>{f86325f2-89f4-4fef-8985-b897cb2a126c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core Sources">
+      <UniqueIdentifier>{d0212d43-52ea-4fff-b05d-07da4e0e018e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,9 +25,6 @@
     <ClCompile Include="..\..\test\unit\TestModelEntityTask.cpp">
       <Filter>Unit Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\test\unit\TestModelEntityUser.cpp">
-      <Filter>Unit Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\test\unit\TestModelRepositoryCategoryRepository.cpp">
       <Filter>Unit Tests</Filter>
     </ClCompile>
@@ -42,80 +34,8 @@
     <ClCompile Include="..\..\test\unit\TestModelRepositoryTaskRepository.cpp">
       <Filter>Unit Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\test\unit\TestModelRepositoryUserRepository.cpp">
-      <Filter>Unit Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\test\unit\TestModelSchemaSchema.cpp">
       <Filter>Unit Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\entity\category\Category.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\entity\commentary\Commentary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\entity\IEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\entity\task\Task.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\entity\user\User.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\factory\category\CategoryFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\factory\commentary\CommentaryFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\factory\task\TaskFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\factory\user\UserFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\BaseRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\category\CategoryRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\commentary\CommentaryRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\task\TaskFilterSettings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\task\TaskRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\task\TaskSortSettings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\repository\user\UserRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\schema\Schema.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\traits\category\CategoryTraits.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\traits\commentary\CommentaryTraits.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\traits\IEntityTraits.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\traits\task\TaskTraits.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\traits\user\UserTraits.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\utility\StringConversions.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\..\contrib\googletest\src\gtest-all.cc">
@@ -124,88 +44,190 @@
     <ClCompile Include="..\..\contrib\sqlite\source\sqlite3.c">
       <Filter>Contrib</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\test\unit\TestUtilityDateTime.cpp">
+      <Filter>Unit Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\unit\TestUtilityStringConversions.cpp">
+      <Filter>Unit Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\entity\category\Category.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\entity\commentary\Commentary.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\entity\IEntity.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\entity\task\Task.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\factory\category\CategoryFactory.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\factory\commentary\CommentaryFactory.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\factory\task\TaskFactory.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\operation\OperationsQueue.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\repository\BaseRepository.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\repository\category\CategoryRepository.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\repository\commentary\CommentaryRepository.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\repository\task\TaskFilterSettings.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\repository\task\TaskRepository.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\repository\task\TaskSortSettings.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\schema\Schema.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\traits\category\CategoryTraits.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\traits\commentary\CommentaryTraits.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\traits\IEntityTraits.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\traits\task\TaskTraits.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\utility\DateTime.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utility\StringConversions.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\workspace\Workspace.cpp">
+      <Filter>Core Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\model\entity\category\Category.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\entity\commentary\Commentary.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\entity\IEntity.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\entity\task\Task.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\model\entity\user\User.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\factory\category\CategoryFactory.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\factory\commentary\CommentaryFactory.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\factory\task\TaskFactory.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\model\factory\user\UserFactory.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\..\model\operation\category\DeleteCategoryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\category\ICategoryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\category\InsertCategoryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\category\UpdateCategoryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\commentary\DeleteCommentaryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\commentary\ICommentaryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\commentary\InsertCommentaryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\commentary\UpdateCommentaryOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\IOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\OperationsQueue.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\task\DeleteTaskOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\task\InsertTaskOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\task\ITaskOperation.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\operation\task\UpdateTaskOperation.h">
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\BaseRepository.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\category\CategoryRepository.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\commentary\CommentaryRepository.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\IRepository.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\IRepositoryImpl.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\task\TaskFilterSettings.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\task\TaskRepository.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\task\TaskSortSettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\model\repository\user\UserRepository.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\schema\Schema.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\traits\category\CategoryTraits.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\traits\commentary\CommentaryTraits.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\traits\IEntityTraits.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\traits\task\TaskTraits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\model\traits\user\UserTraits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\utility\StringConversions.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\utility\DateTime.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\utility\StringConversions.h">
+      <Filter>Core Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\workspace\Workspace.h">
+      <Filter>Core Sources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

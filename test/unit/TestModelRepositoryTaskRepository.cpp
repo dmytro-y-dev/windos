@@ -90,8 +90,8 @@ TEST_F(TestModelRepositoryTaskRepository, TaskRepositoryDeleteOneEntity)
 TEST_F(TestModelRepositoryTaskRepository, TaskRepositoryFindAll)
 {
   CategoryRepository categoryRepository(m_db);
-  Category category1(0, 1, "category1");
-  Category category2(0, 1, "category2");
+  Category category1(1, "category1");
+  Category category2(2, "category2");
 
   categoryRepository.Insert(category1);
   categoryRepository.Insert(category2);
@@ -116,13 +116,13 @@ TEST_F(TestModelRepositoryTaskRepository, TaskRepositoryFindAll)
   filters1.SetDueDateLowerLimit(Task::DateTime(2012, 12, 14, 12, 12, 0));
   filters1.SetDueDateUpperLimit(Task::DateTime(2014, 12, 14, 12, 12, 0));
 
-  std::vector<std::shared_ptr<Task> > foundEntities1 = repository.FindAll(1, sortSettings1, filters1);
+  std::vector<std::shared_ptr<Task> > foundEntities1 = repository.FindAll(sortSettings1, filters1);
 
   ASSERT_TRUE(foundEntities1.size() == 2);
   EXPECT_TRUE(foundEntities1[0]->GetTitle() == "task2");
   EXPECT_TRUE(foundEntities1[1]->GetTitle() == "task3");
 
-  std::vector<std::shared_ptr<Task> > foundEntities2 = repository.FindAll(1, sortSettings1Desc, filters1);
+  std::vector<std::shared_ptr<Task> > foundEntities2 = repository.FindAll(sortSettings1Desc, filters1);
 
   ASSERT_TRUE(foundEntities2.size() == 2);
   EXPECT_TRUE(foundEntities2[0]->GetTitle() == "task3");
@@ -132,7 +132,7 @@ TEST_F(TestModelRepositoryTaskRepository, TaskRepositoryFindAll)
   filters2.EnableFilterByCategory();
   filters2.SetCategory("category1");
 
-  std::vector<std::shared_ptr<Task> > foundEntities3 = repository.FindAll(1, sortSettings1, filters2);
+  std::vector<std::shared_ptr<Task> > foundEntities3 = repository.FindAll(sortSettings1, filters2);
 
   EXPECT_TRUE(foundEntities3.size() == 3);
 
@@ -143,7 +143,7 @@ TEST_F(TestModelRepositoryTaskRepository, TaskRepositoryFindAll)
   filters3.SetDueDateLowerLimit(Task::DateTime(2012, 12, 14, 12, 12, 0));
   filters3.SetDueDateUpperLimit(Task::DateTime(2014, 12, 14, 12, 12, 0));
 
-  std::vector<std::shared_ptr<Task> > foundEntities4 = repository.FindAll(1, sortSettings2, filters3);
+  std::vector<std::shared_ptr<Task> > foundEntities4 = repository.FindAll(sortSettings2, filters3);
 
   EXPECT_TRUE(foundEntities4.size() == 2);
 }

@@ -174,7 +174,7 @@ void DateTime::CheckIfMonthInProperRange()
 
 void DateTime::CheckIfYearInProperRange()
 {
-  if (m_year >= 1900) {
+  if (m_year >= 1970) {
     // Value is ok
   } else {
     throw DateTimeConsistencyException("DateTimeConsistencyException: Year must be larger than 1900!");

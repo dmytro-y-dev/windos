@@ -12,16 +12,13 @@ namespace todos_model_entity {
     typedef std::string String;
 
   private:
-    unsigned long m_userId;
     String m_name;
 
   public:
-    Category(unsigned long id, unsigned long userId, const String& name);
+    Category(unsigned long id, const String& name);
 
-    unsigned long GetUserId() const;
     String GetName() const;
 
-    void SetUserId(unsigned long userId);
     void SetName(const String& name);
   };
 }

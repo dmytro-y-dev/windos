@@ -56,7 +56,7 @@ static int checkIfSchemaIsCreated(void *ptrTablesNames, int argc, char **argv, c
 TEST_F(TestModelSchemaSchema, SchemaCreation)
 {
   const char *queryGetTablesNames = "SELECT name FROM sqlite_master WHERE type='table';";
-  set<string> expectedTablesNames({"Category", "User", "Task", "Commentary"});
+  set<string> expectedTablesNames({"Category", "Task", "Commentary"});
 
   m_db.CreateTables();
   sqlite3_exec(m_db.GetDatabaseHandle(), queryGetTablesNames, checkIfSchemaIsCreated, &expectedTablesNames, nullptr);

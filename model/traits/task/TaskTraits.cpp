@@ -9,7 +9,7 @@ const char *TaskTraits::GetIdFieldName() const
 
 TaskTraits::FieldsNamesContainer TaskTraits::GetFieldsNames() const
 {
-  static FieldsNamesContainer fieldsNames{"task_id", "category_id", "title", "priority", "due_date", "reminder_date", "status"};
+  static FieldsNamesContainer fieldsNames{"task_id", "category_id", "title", "priority", "creation_date", "due_date", "reminder_date", "status"};
 
   return fieldsNames;
 }

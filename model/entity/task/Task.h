@@ -32,17 +32,20 @@ namespace todos_model_entity {
     unsigned long m_categoryId;
     String m_title;
     Priority m_priority;
+    DateTime m_creationDate;
     DateTime m_dueDate;
     DateTime m_reminderDate;
     Status m_status;
 
   public:
-    Task(unsigned long id, unsigned long categoryId, const String& title, Priority priority, const DateTime& dueDate,
-         const DateTime& reminderDate, Status status);
+    Task(unsigned long id, unsigned long categoryId, const String& title, Priority priority,
+      const DateTime &creationDate, const DateTime& dueDate, const DateTime& reminderDate,
+      Status status);
 
     unsigned long GetCategoryId() const;
     String GetTitle() const;
     Priority GetPriority() const;
+    DateTime GetCreationDate() const;
     DateTime GetDueDate() const;
     DateTime GetReminderDate() const;
     Status GetStatus() const;
@@ -50,6 +53,7 @@ namespace todos_model_entity {
     void SetCategoryId(unsigned long categoryId);
     void SetTitle(const String& title);
     void SetPriority(Priority priority);
+    void SetCreationDate(const DateTime& creationDate);
     void SetDueDate(const DateTime& dueDate);
     void SetReminderDate(const DateTime& reminderDate);
     void SetStatus(Status status);

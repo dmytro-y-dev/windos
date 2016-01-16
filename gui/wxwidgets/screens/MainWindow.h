@@ -7,6 +7,9 @@
 #include <wx/wx.h>
 #endif
 
+#include <model/repository/task/TaskFilterSettings.h>
+#include <model/repository/task/TaskSortSettings.h>
+
 namespace windos_gui_screens {
   class MainWindow: public wxFrame
   {
@@ -15,14 +18,18 @@ namespace windos_gui_screens {
     ~MainWindow();
 
   private:
+    typedef todos_model_repository::TaskFilterSettings TaskFilterSettings;
+    typedef todos_model_repository::TaskSortSettings TaskSortSettings;
+
+  private:
     static const int STATUSBAR_PANES_SIZES[];
 
     static const int STATUSBAR_PANE_DB_PATH;
-    static const int STATUSBAR_PANE_DB_ISMODIFIED;
+    static const int STATUSBAR_PANE_DB_UNCOMPLETED_TASKS_COUNT;
 
     static const wxSize MIN_WINDOW_SIZE;
 
-  private:
+    wxCheckBox* m_checkboxShowCompletedTasks;
     wxMenuItem* m_menuitemShowCompletedTasks;
     wxMenuItem* m_menuitemSortByTitle;
     wxMenuItem* m_menuitemSortByFinishDate;
@@ -35,7 +42,9 @@ namespace windos_gui_screens {
     wxChoice* m_choiceOrderBy;
     wxTextCtrl* m_searchBoxTask;
     wxListBox* m_listTasks;
-    wxCheckBox* m_checkboxShowCompletedTasks;
+
+    TaskFilterSettings m_settingsFilter;
+    TaskSortSettings m_settingsSort;
 
   private:
     wxDECLARE_EVENT_TABLE();
@@ -59,15 +68,25 @@ namespace windos_gui_screens {
     void MenuHelpURLLatestReleases(wxCommandEvent &event);
     void MenuHelpAbout(wxCommandEvent &event);
 
+    void ChoiceFilterCategory(wxCommandEvent &event);
+    void ChoiceSortField(wxCommandEvent &event);
+    void ChoiceSortOrder(wxCommandEvent &event);
+
     void ButtonManageCategories(wxCommandEvent &event);
     void ButtonCreateTask(wxCommandEvent &event);
-
-    void UpdateCategoriesList();
 
     void InitializeWidgets();
     void InitializeIcon();
     void InitializeMenubar();
     void InitializeStatusbar();
+
+    void EnableTasksView(bool enable = true);
+    void EnableSizer(wxSizer* sizer, bool enable = true);
+
+    void UpdateWorkspaceStatus();
+
+    void UpdateShownCategories();
+    void UpdateShownTasks();
   };
 }
 

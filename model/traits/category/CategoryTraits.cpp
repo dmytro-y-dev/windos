@@ -9,7 +9,7 @@ const char *CategoryTraits::GetIdFieldName() const
 
 CategoryTraits::FieldsNamesContainer CategoryTraits::GetFieldsNames() const
 {
-  static FieldsNamesContainer fieldsNames{"category_id", "user_id", "name"};
+  static FieldsNamesContainer fieldsNames{"category_id", "name"};
 
   return fieldsNames;
 }

@@ -40,25 +40,25 @@ std::vector<TaskRepository::EntitySharedPtr> TaskRepository::FindAllByCategoryId
 }
 
 
-std::vector<TaskRepository::EntitySharedPtr> TaskRepository::FindAll(unsigned long userId, TaskSortSettings sort, const TaskFilterSettings &filters)
+std::vector<TaskRepository::EntitySharedPtr> TaskRepository::FindAll(TaskSortSettings sort, const TaskFilterSettings &filters)
 {
   // Prepare sorting part of SQL script
 
-  std::string orderBy = "";
+  std::string orderBy = "ORDER BY `priority` DESC";
 
   switch (sort.GetField())
   {
   case TaskSortSettings::Field::DUE_DATE:
-    orderBy = "ORDER BY `due_date`" ;
+    orderBy += ", `due_date`" ;
     break;
   case TaskSortSettings::Field::TITLE:
-    orderBy = "ORDER BY `title`" ;
+    orderBy += ", `title`" ;
     break;
-  case TaskSortSettings::Field::PRIORITY:
-    orderBy = "ORDER BY `priority`" ;
+  case TaskSortSettings::Field::CREATION_DATE:
+    orderBy += ", `creation_date`" ;
     break;
   default:
-    orderBy = "ORDER BY `title`" ;
+    orderBy += ", `title`" ;
     break;
   }
 
@@ -80,26 +80,34 @@ std::vector<TaskRepository::EntitySharedPtr> TaskRepository::FindAll(unsigned lo
   std::string filterBy = "";
 
   if (filters.IsFilterByCategory()) {
-    filterBy += "AND `Category`.`name` = ?";
-
-    if (filters.IsFilterByDueDate()) {
-      filterBy += " AND ";
-    }
+    filterBy += "`Category`.`name` = ?";
   }
 
   if (filters.IsFilterByDueDate()) {
-    if (!filters.IsFilterByCategory()) {
-      filterBy += "AND ";
+    if (filters.IsFilterByCategory()) {
+      filterBy += " AND ";
     }
 
     filterBy += " `Task`.`due_date` > '" + todos_utility::DateTimeToString(filters.GetDueDateLowerLimit()) +
       "' AND `Task`.`due_date` < '" + todos_utility::DateTimeToString(filters.GetDueDateUpperLimit()) + "'";
   }
 
+  if (filters.IsShowCompleted() == false) {
+    if (filters.IsFilterByCategory() || filters.IsFilterByDueDate()) {
+      filterBy += " AND ";
+    }
+
+    filterBy += " `Task`.`status` = 'uncompleted'";
+  }
+
+  if (!filterBy.empty()) {
+    filterBy = "WHERE " + filterBy;
+  }
+
   // Concat SQL script
 
-  std::string query = "SELECT * FROM `Task` INNER JOIN `Category` ON `Category`.`category_id` = `Task`.`category_id` "
-      "WHERE `Category`.`user_id` = '" + todos_utility::IntToString(userId) + "' " + filterBy + " " + orderBy + ";";
+  std::string query = "SELECT * FROM `Task` INNER JOIN `Category` ON `Category`.`category_id` = `Task`.`category_id` " +
+    filterBy + " " + orderBy + ";";
 
   sqlite3_stmt* stmt;
   sqlite3_prepare_v2(GetBaseRepository().GetSchema().GetDatabaseHandle(), query.c_str(), -1, &stmt, NULL);
@@ -113,4 +121,31 @@ std::vector<TaskRepository::EntitySharedPtr> TaskRepository::FindAll(unsigned lo
   sqlite3_finalize(stmt);
 
   return entities;
+}
+
+size_t TaskRepository::CountUncompletedTasks()
+{
+  std::string query = "SELECT COUNT(*) FROM `Task` WHERE `Task`.`status` = 'uncompleted';";
+
+  sqlite3_stmt* stmt;
+  sqlite3_prepare_v2(GetBaseRepository().GetSchema().GetDatabaseHandle(), query.c_str(), -1, &stmt, NULL);
+
+  EntityTraits::FieldsValuesContainer result;
+
+  if (sqlite3_step(stmt) == SQLITE_ROW) {
+    for (int i = 0, iend = sqlite3_column_count(stmt); i != iend; ++i) {
+      std::string key = sqlite3_column_name(stmt, i);
+      std::string value = reinterpret_cast<const char*>(sqlite3_column_text(stmt, i));
+
+      result.insert(std::make_pair(key, value));
+    }
+  }
+
+  sqlite3_finalize(stmt);
+
+  if (result.empty()) {
+    return 0;
+  } else {
+    return todos_utility::StringToInt(result["COUNT(*)"]);
+  }
 }

@@ -34,9 +34,6 @@
     <ClInclude Include="..\..\model\entity\task\Task.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\model\entity\user\User.h">
-      <Filter>Core Source Code</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\model\factory\category\CategoryFactory.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
@@ -44,9 +41,6 @@
       <Filter>Core Source Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\factory\task\TaskFactory.h">
-      <Filter>Core Source Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\model\factory\user\UserFactory.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\repository\BaseRepository.h">
@@ -73,9 +67,6 @@
     <ClInclude Include="..\..\model\repository\task\TaskSortSettings.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\model\repository\user\UserRepository.h">
-      <Filter>Core Source Code</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\model\schema\Schema.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
@@ -89,9 +80,6 @@
       <Filter>Core Source Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\model\traits\task\TaskTraits.h">
-      <Filter>Core Source Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\model\traits\user\UserTraits.h">
       <Filter>Core Source Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\utility\DateTime.h">
@@ -115,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\wxwidgets\screens\TaskEditorWindow.h">
       <Filter>GUI\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\model\workspace\Workspace.h">
+      <Filter>Core Source Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +131,6 @@
     <ClCompile Include="..\..\model\entity\task\Task.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\model\entity\user\User.cpp">
-      <Filter>Core Source Code</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\model\factory\category\CategoryFactory.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
@@ -150,9 +138,6 @@
       <Filter>Core Source Code</Filter>
     </ClCompile>
     <ClCompile Include="..\..\model\factory\task\TaskFactory.cpp">
-      <Filter>Core Source Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\factory\user\UserFactory.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
     <ClCompile Include="..\..\model\repository\BaseRepository.cpp">
@@ -173,9 +158,6 @@
     <ClCompile Include="..\..\model\repository\task\TaskSortSettings.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\model\repository\user\UserRepository.cpp">
-      <Filter>Core Source Code</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\model\schema\Schema.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
@@ -189,9 +171,6 @@
       <Filter>Core Source Code</Filter>
     </ClCompile>
     <ClCompile Include="..\..\model\traits\task\TaskTraits.cpp">
-      <Filter>Core Source Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\model\traits\user\UserTraits.cpp">
       <Filter>Core Source Code</Filter>
     </ClCompile>
     <ClCompile Include="..\..\utility\DateTime.cpp">
@@ -217,6 +196,9 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\wxwidgets\screens\TaskEditorWindow.cpp">
       <Filter>GUI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\model\workspace\Workspace.cpp">
+      <Filter>Core Source Code</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -77,15 +77,8 @@ void Schema::CreateTables()
   // TODO: Enable foreign key constraints
 
   static const char* query =
-    "CREATE TABLE `User`( "
-    "`user_id` INTEGER PRIMARY KEY, "
-    "`login` VARCHAR(255) UNIQUE NOT NULL, "
-    "`password` VARCHAR(255) NOT NULL, "
-    "`signedup_on` DATETIME NULL "
-    "); "
     "CREATE TABLE `Category`( "
     "`category_id` INTEGER PRIMARY KEY, "
-    "`user_id` INT NOT NULL REFERENCES `User`(`user_id`) ON UPDATE CASCADE ON DELETE CASCADE, "
     "`name` VARCHAR(255) UNIQUE NOT NULL "
     "); "
     "CREATE TABLE `Task`( "
@@ -93,6 +86,7 @@ void Schema::CreateTables()
     "`category_id` INT NOT NULL REFERENCES `Category`(`category_id`) ON UPDATE CASCADE ON DELETE CASCADE, "
     "`title` VARCHAR(255) NOT NULL, "
     "`priority` VARCHAR(20) NOT NULL, "
+    "`creation_date` DATETIME NULL, "
     "`due_date` DATETIME NULL, "
     "`reminder_date` DATETIME NULL, "
     "`status` VARCHAR(20) NOT NULL "
@@ -113,8 +107,7 @@ void Schema::DestroyTables()
   static const char* query =
     "DROP TABLE `Commentary`; "
     "DROP TABLE `Task`; "
-    "DROP TABLE `Category`; "
-    "DROP TABLE `User`; ";
+    "DROP TABLE `Category`; ";
 
   sqlite3_exec(m_db, query, nullptr, nullptr, nullptr);
 }

@@ -37,6 +37,11 @@ wxString Application::GetApplicationDirectory() const
   return m_applicationDirectory;
 }
 
+Application::Workspace& Application::GetWorkspace()
+{
+  return m_workspace;
+}
+
 Application& windos_gui::wxGetApp()
 {
   return ::wxGetApp();

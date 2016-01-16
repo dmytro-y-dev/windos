@@ -3,9 +3,9 @@
 using todos_model_entity::Task;
 
 Task::Task(unsigned long id, unsigned long categoryId, const Task::String &title,
-  Task::Priority priority, const Task::DateTime &dueDate,
+  Task::Priority priority, const Task::DateTime &creationDate, const Task::DateTime &dueDate,
   const Task::DateTime &reminderDate, Task::Status status) :
-  IEntity(id), m_categoryId(categoryId), m_title(title), m_priority(priority),
+  IEntity(id), m_categoryId(categoryId), m_title(title), m_priority(priority), m_creationDate(creationDate),
   m_dueDate(dueDate), m_reminderDate(reminderDate), m_status(status)
 {
 }
@@ -23,6 +23,11 @@ Task::String Task::GetTitle() const
 Task::Priority Task::GetPriority() const
 {
   return m_priority;
+}
+
+Task::DateTime Task::GetCreationDate() const
+{
+  return m_creationDate;
 }
 
 Task::DateTime Task::GetDueDate() const
@@ -53,6 +58,11 @@ void Task::SetTitle(const Task::String &title)
 void Task::SetPriority(Task::Priority priority)
 {
   m_priority = priority;
+}
+
+void Task::SetCreationDate(const Task::DateTime &creationDate)
+{
+  m_creationDate = creationDate;
 }
 
 void Task::SetDueDate(const Task::DateTime &dueDate)

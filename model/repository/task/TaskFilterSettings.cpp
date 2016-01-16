@@ -3,8 +3,13 @@
 using todos_model_repository::TaskFilterSettings;
 
 TaskFilterSettings::TaskFilterSettings() :
-  m_byCategory(false), m_byDueDate(false)
+  m_byCategory(false), m_byDueDate(false), m_showCompleted(false)
 {
+}
+
+bool TaskFilterSettings::IsShowCompleted() const
+{
+  return m_showCompleted;
 }
 
 bool TaskFilterSettings::IsFilterByCategory() const
@@ -30,6 +35,11 @@ TaskFilterSettings::DateTime TaskFilterSettings::GetDueDateUpperLimit() const
 TaskFilterSettings::DateTime TaskFilterSettings::GetDueDateLowerLimit() const
 {
   return m_dueDateLowerLimit;
+}
+
+void TaskFilterSettings::SetShowCompleted(bool show)
+{
+  m_showCompleted = show;
 }
 
 void TaskFilterSettings::EnableFilterByCategory(bool byCategory)

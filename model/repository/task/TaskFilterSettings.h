@@ -18,15 +18,19 @@ namespace todos_model_repository {
     bool m_byCategory;
     bool m_byDueDate;
 
+    bool m_showCompleted;
+
   public:
     TaskFilterSettings();
 
+    bool IsShowCompleted() const;
     bool IsFilterByCategory() const;
     bool IsFilterByDueDate() const;
     std::string GetCategory() const;
     DateTime GetDueDateUpperLimit() const;
     DateTime GetDueDateLowerLimit() const;
 
+    void SetShowCompleted(bool show = true);
     void EnableFilterByCategory(bool byCategory = true);
     void EnableFilterByDueDate(bool byDueDate = true);
     void SetCategory(const std::string& category);

@@ -19,7 +19,7 @@ namespace todos_model_schema {
     CounterPtr m_referencesCounter;
 
   public:
-    Schema(const char* filename);
+    Schema(const char* filename = "");
     Schema(const Schema& schema);
     ~Schema();
 

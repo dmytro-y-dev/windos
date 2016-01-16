@@ -10,8 +10,8 @@ namespace todos_model_repository {
       NONE = 0,
 
       DUE_DATE = 1,
-      PRIORITY = 2,
-      TITLE = 3
+      TITLE = 2,
+      CREATION_DATE = 3
     };
 
     enum class Order

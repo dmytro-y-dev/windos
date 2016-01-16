@@ -21,7 +21,9 @@ namespace todos_model_repository {
     TaskRepository(const Schema& schema);
 
     std::vector<EntitySharedPtr> FindAllByCategoryId(unsigned long categoryId);
-    std::vector<EntitySharedPtr> FindAll(unsigned long userId, TaskSortSettings sort, const TaskFilterSettings& filters);
+    std::vector<EntitySharedPtr> FindAll(TaskSortSettings sort, const TaskFilterSettings& filters);
+
+    size_t CountUncompletedTasks();
   };
 }
 

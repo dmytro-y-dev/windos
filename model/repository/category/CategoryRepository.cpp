@@ -11,9 +11,9 @@ CategoryRepository::CategoryRepository(const Schema &schema) :
 {
 }
 
-std::vector<CategoryRepository::EntitySharedPtr> CategoryRepository::FindAll(unsigned long userId)
+std::vector<CategoryRepository::EntitySharedPtr> CategoryRepository::FindAll()
 {
-  std::string query = "SELECT * FROM `Category` WHERE `user_id` = '" + todos_utility::IntToString(userId) + "' ORDER BY `name`;";
+  std::string query = "SELECT * FROM `Category` ORDER BY `name`;";
 
   sqlite3_stmt* stmt;
   sqlite3_prepare_v2(GetBaseRepository().GetSchema().GetDatabaseHandle(), query.c_str(), -1, &stmt, NULL);

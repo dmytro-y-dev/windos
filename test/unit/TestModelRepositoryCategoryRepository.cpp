@@ -35,7 +35,7 @@ TEST_F(TestModelRepositoryCategoryRepository, CategoryRepositoryInsertOneEntity)
 {
   CategoryRepository repository(m_db);
 
-  Category entity(0, 1, "test");
+  Category entity(0, "test");
   unsigned long insertId = repository.Insert(entity);
 
   ASSERT_TRUE(insertId != 0);
@@ -49,8 +49,8 @@ TEST_F(TestModelRepositoryCategoryRepository, CategoryRepositoryInsertOneEntity)
 TEST_F(TestModelRepositoryCategoryRepository, CategoryRepositoryUpdateOneEntity)
 {
   CategoryRepository repository(m_db);
-  Category entity(0, 1, "test");
-  Category updatedEntity(0, 1, "updatedlogin");
+  Category entity(0, "test");
+  Category updatedEntity(0, "updatedlogin");
 
   unsigned long insertId = repository.Insert(entity);
   ASSERT_TRUE(insertId != 0);
@@ -69,7 +69,7 @@ TEST_F(TestModelRepositoryCategoryRepository, CategoryRepositoryUpdateOneEntity)
 TEST_F(TestModelRepositoryCategoryRepository, CategoryRepositoryDeleteOneEntity)
 {
   CategoryRepository repository(m_db);
-  Category entity(0, 1, "test");
+  Category entity(0, "test");
 
   unsigned long insertId = repository.Insert(entity);
   ASSERT_TRUE(insertId != 0);
@@ -88,15 +88,15 @@ TEST_F(TestModelRepositoryCategoryRepository, CategoryRepositoryFindAll)
 {
   CategoryRepository repository(m_db);
 
-  Category entity1(0, 1, "test2");
-  Category entity2(0, 1, "test1");
-  Category entity3(0, 1, "test3");
+  Category entity1(0, "test2");
+  Category entity2(0, "test1");
+  Category entity3(0, "test3");
 
   repository.Insert(entity1);
   repository.Insert(entity2);
   repository.Insert(entity3);
 
-  std::vector<std::shared_ptr<Category> > foundEntities = repository.FindAll(1);
+  std::vector<std::shared_ptr<Category> > foundEntities = repository.FindAll();
 
   EXPECT_TRUE(foundEntities.size() == 3);
 }

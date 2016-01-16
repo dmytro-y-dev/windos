@@ -16,11 +16,12 @@ TaskFactory::EntitySharedPtr TaskFactory::CreateFromFieldsValues(const TaskFacto
     unsigned int categoryId = todos_utility::StringToInt(values.at("category_id"));
     std::string title = values.at("title");
     Task::Priority priority = StringToPriority(values.at("priority"));
+    Task::DateTime creationDate = todos_utility::StringToDateTime(values.at("creation_date"));
     Task::DateTime dueDate = todos_utility::StringToDateTime(values.at("due_date"));
     Task::DateTime reminderDate = todos_utility::StringToDateTime(values.at("reminder_date"));
     Task::Status status = StringToStatus(values.at("status"));
 
-    ptrEntity.reset(new Task(id, categoryId, title, priority, dueDate, reminderDate, status));
+    ptrEntity.reset(new Task(id, categoryId, title, priority, creationDate, dueDate, reminderDate, status));
   }
 
   return ptrEntity;
@@ -34,6 +35,7 @@ TaskFactory::FieldsValuesContainer TaskFactory::RevertToFieldsValues(const TaskF
   values.insert(std::make_pair("category_id", todos_utility::IntToString(entity.GetCategoryId())));
   values.insert(std::make_pair("title", entity.GetTitle()));
   values.insert(std::make_pair("priority", PriorityToString(entity.GetPriority())));
+  values.insert(std::make_pair("creation_date", todos_utility::DateTimeToString(entity.GetCreationDate())));
   values.insert(std::make_pair("due_date", todos_utility::DateTimeToString(entity.GetDueDate())));
   values.insert(std::make_pair("reminder_date", todos_utility::DateTimeToString(entity.GetReminderDate())));
   values.insert(std::make_pair("status", StatusToString(entity.GetStatus())));
